@@ -1,5 +1,4 @@
-
-@props(['title', 'image', 'date', 'description'])
+@props(['title', 'image', 'date', 'description' => null, 'time' => null])
 
 <div class="card h-100 border-0 rounded-0 text-white bg-uady-blue">
     
@@ -23,16 +22,29 @@
             <span class="text-uady-gold">{{ $date }}</span>
         </p>
         
-      
-        <p class="card-text mb-4">
-            {{ $description }}
-        </p>
+        {{-- SOLO SI EXISTE EN LA YABLA --}}
+        @if($description)
+            <p class="card-text mb-4">
+                {{ $description }}
+            </p>
+        @endif
+
+        {{-- SOLO SI EXISTE EN LA TABLA --}}
+        @if($time)
+            <p class="card-text mb-4">
+                <span class="fw-bold">Hora:</span> 
+                <span class="text-uady-gold">{{ $time }}</span>
+            </p>
+        @endif
         
         <div class="mt-auto text-end">
-            <a class="text-white text-decoration-none fst-italic">
-                Ver más...
-            </a>
+            <x-button href="#" text="Ver más..." color="text-white">
+                {{-- Sin icono --}}
+            </x-button>
         </div>
+
+    
+        
     </div>
 
 </div>

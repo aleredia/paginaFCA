@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PrincipalController;
 
-Route::get('/', function () {
-    return view('principal');
-});
+Route::get('/', [PrincipalController::class, 'principal'])->name('inicio');
+

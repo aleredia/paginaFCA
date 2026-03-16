@@ -1,156 +1,196 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Facultad de Contaduría y Administración @yield('title', 'Inicio')</title>
-    <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Facultad de Contaduría y Administración @yield('title', 'Inicio')</title>
+        <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
-    <style>
-        .bg-uady-gold { 
-            background-color: #c99700; }
-        .bg-uady-blue { 
-            background-color: #0b3b60; }
-        .text-uady-blue {
-             color: #0b3b60; }
-        .text-uady-gold { 
-            color: #c99700; }    
+        <style>
+            .bg-uady-gold { 
+                background-color: #c99700; }
+            .bg-uady-blue { 
+                background-color: #002e5f; }
+            .text-uady-blue {
+                color: #0b3b60; }
+            .text-uady-gold { 
+                color: #c99700; }    
 
-        .nav-uady-gold .nav-link { 
-            color: #111827; font-weight: 500; transition: color 0.3s; }
-        .nav-uady-gold .nav-link:hover { 
-            color: #ffffff; }
+            .nav-uady-gold .nav-link { 
+                color: #111827; font-weight: 500; transition: color 0.3s; }
+            .nav-uady-gold .nav-link:hover { 
+                color: #ffffff; }
 
-        .nav-uady-blue .nav-link { 
-            color: #ffffff; transition: color 0.3s; }
-        .nav-uady-blue .nav-link:hover { 
-            color: #d1d5db; }
-    </style>
+            .nav-uady-blue .nav-link { 
+                color: #ffffff; transition: color 0.3s; }
+            .nav-uady-blue .nav-link:hover { 
+                color: #d1d5db; }
 
-</head>
-<body class="bg-light">
+                
+        </style>
+    </head>
+
+    <body class="bg-light">
 
         {{-- HEADER --}}
+        <header class="container-fluid px-0 bg-white shadow-sm">
+            <div class="row g-0">
 
-    <header class="container-fluid px-0 bg-white shadow-sm">
-        <div class="row g-0">
-            
-            <div class="col-md-2 d-none d-md-flex align-items-center justify-content-center p-3">
-                <img src="{{ asset('img/uady.png') }}"class="img-fluid" style="max-height: 110px;">
-            </div>
+                {{-- LOGO --}}
+                <div class="col-md-2 d-none d-md-flex align-items-center justify-content-center p-3">
+                    <img src="{{ asset('img/uady.png') }}" class="img-fluid" style="max-height: 90px;">
+                </div>
 
-            <div class="col-12 col-md-10 d-flex flex-column">
-                
-                <div class="d-flex flex-wrap justify-content-between align-items-center p-3 flex-grow-1">
+                <div class="col-12 col-md-10 d-flex flex-column">
                     
-                    <div class="d-flex flex-column align-items-center mx-auto mx-md-4">
-                        <span class="text-uady-blue fw-bold mb-2 fs-5">"Luz, Ciencia y Verdad"</span>
-                        <div class="input-group input-group-sm border-bottom border-secondary border-2">
-                           <x-search-bar>Buscar...</x-search-bar>
+                    {{-- PARTE BLANCA--}}
+                    <div class="d-flex flex-wrap justify-content-between align-items-center p-3 flex-grow-1">
+                        <div class="d-flex flex-column align-items-center mx-auto mx-md-4">
+                            <span class="text-uady-blue fw-bold mb-2 fs-5">"Luz, Ciencia y Verdad"</span>
+                            <div class="input-group input-group-sm border-bottom border-secondary border-2">
+                                <x-search-bar>Buscar...</x-search-bar>
+                            </div>
+                        </div>
+
+                        <div class="d-none d-md-flex gap-4">
+                            @foreach($apartados->slice(0,5) as $apartado)
+                                <x-button href="#" text="{{ $apartado->nombre }}">
+                                    @if($apartado->id == 1)
+                                        <i class="bi bi-laptop"></i>
+                                    @elseif($apartado->id == 2)
+                                        <i class="bi bi-envelope"></i>
+                                    @elseif($apartado->id == 3)
+                                        <i class="bi bi-calendar"></i>
+                                    @elseif($apartado->id == 4)
+                                        <i class="bi bi-person"></i>
+                                    @elseif($apartado->id == 5)
+                                        <i class="bi bi-chat-dots"></i>
+                                    @endif
+                                </x-button>
+                            @endforeach
+                        </div>
+
+                    </div>
+
+                    {{-- PARTE AMARILLA --}}
+                    <nav class="navbar navbar-expand-sm bg-uady-gold py-1">
+                        <div class="container-fluid justify-content-center">
+                            <ul class="navbar-nav gap-2 gap-md-5">
+                                @foreach($apartados->slice(5,5) as $apartado)
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark fw-bold" href="#">{{ $apartado->nombre }}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </nav>
+
+                    {{-- PARTE AZUL--}}
+                    <nav class="navbar navbar-expand-sm bg-uady-blue py-2">
+                        <div class="container-fluid justify-content-center">
+                            <ul class="navbar-nav gap-2 gap-md-5 text-center">
+                                @foreach($apartados->slice(10,5) as $apartado)
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white fw-medium" href="#">{{ $apartado->nombre }}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </nav>
+
+                </div>
+            </div>
+        </header>
+        {{-- FIN HEADER --}}
+
+        <main class="container-fluid p-0">
+            @yield('content')
+            
+            {{-- FOOTER --}}
+            <footer class="bg-uady-blue text-white py-4 mt-5">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                            <p class="small mb-0">Sistema de atención a usuarios(Tecnologías de Información)</p>
+                            <p class="small mb-0">Sistema de atención a usuarios (Servicios Generales)</p>
+                            <p class="small mb-0">Servicios de Control Escolar</p>
+                            <p class="small mb-0">UADY 100% Libre de Humo de Tabaco</p>
+                            <p class="small mb-0">Aviso de Privacidad para los Alumnos</p>
+                            <p class="small mb-0">Aviso Integral de Privacidad - Cámaras de Vigilancia FCA</p>
+                            <p class="small mb-0">Preguntas Frecuentes</p>
+                            <p class="small mb-0">Contacto: comunicacion.fca@correo.uady.mx</p>
+                        </div>
+                        
+                        <div class="col-md-4 text-center mb-3 mb-md-0">
+                            <p class="small mb-0">Facultad de Contaduría y Administración</p>
+                        </div>
+                        
+                        <div class="col-md-4 text-center text-md-end">
+                            <div class="d-flex justify-content-center justify-content-md-end gap-3">
+                                <a href="https://www.facebook.com/fca.uady.mx" class="text-white hover-gold"><i class="bi bi-facebook fs-5"></i></a>
+                                <a href="https://www.instagram.com/fca.uady/" class="text-white hover-gold"><i class="bi bi-instagram fs-5"></i></a>
+                                <a href="https://x.com/FcaUady" class="text-white hover-gold"><i class="bi bi-twitter-x fs-5"></i></a>
+                                <a href="https://www.youtube.com/channel/UCbj82IJy8Q9p4yUu5if-Vcg" class="text-white hover-gold"><i class="bi bi-youtube fs-5"></i></a>
+                                <a href="https://www.tiktok.com/@fca.uady" class="text-white hover-gold"><i class="bi bi-tiktok fs-5"></i></a>
+                                <a href="https://mx.linkedin.com/company/posgrados-fca-uady" class="text-white hover-gold"><i class="bi bi-linkedin fs-5"></i></a>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="d-none d-md-flex gap-4">
-                        <x-button href="#" text="Servicios en línea">
-                            <svg width="24" 
-                            height="24" 
-                            fill="none" 
-                            stroke="currentColor" 
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                        </x-button>
-
-                        <x-button href="#" text="Correo">
-                            <svg width="24" 
-                                height="24" 
-                                fill="none" 
-                                stroke="currentColor" 
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                        </x-button>
-
-                        <x-button href="#" text="Calendario">
-                            <svg width="24" 
-                                height="24" 
-                                fill="none" 
-                                stroke="currentColor" 
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" 
-                                    stroke-linejoin="round" 
-                                    stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                        </x-button>
-
+                    <div class="row align-items-center">
+                        <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                            <br>
+                            <p class="small mb-0">Protocolo de violencia de género</p>
+                            <p class="small mb-0">Aviso Integral de Privacidad - Cámaras de Vigilancia</p>
+                            <p class="small mb-0">Catálogo de solicitudes y tiempos de atención</p>
+                            <p class="small mb-0">Transparecia</p>
+                            <p class="small mb-0">Bibliotecas</p>
+                            <p class="small mb-0">Mapa de sitio</p>
+                        </div>
                         
-                        <x-button href="#" text="Personal">
-                            <svg width="24" 
-                                height="24" 
-                                fill="none" 
-                                stroke="currentColor" 
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z">
-                                </path>
-                            </svg>
-                        </x-button>
+                        <div class="col-md-4 text-center mb-3 mb-md-0">
+                            <p class="small mb-0"> © Todos los Derechos Reservados, UADY 2026</p>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div class="row g-2">
+                                <div class="col-12">
+                                    <div class="d-flex justify-content-center justify-content-md-end gap-3">
+                                        <a href="https://comunicacion.uady.mx/radio--universidad/bienvenida" class="text-white hover-gold"><i class="bi bi-broadcast fs-5"></i></a>
+                                        <a href="https://www.facebook.com/face.uady/" class="text-white hover-gold"><i class="bi bi-facebook fs-5"></i></a>
+                                        <a href="https://www.tiktok.com/@uadyinstitucional?is_from_webapp=1&sender_device=pc" class="text-white hover-gold"><i class="bi bi-tiktok fs-5"></i></a>
+                                        <a href="https://www.youtube.com/user/UADYInstitucional" class="text-white hover-gold"><i class="bi bi-youtube fs-5"></i></a>
+                                        <a href="https://www.instagram.com/uady_institucional/" class="text-white hover-gold"><i class="bi bi-instagram fs-5"></i></a>
+                                        <a href="https://x.com/UADYoficial" class="text-white hover-gold"><i class="bi bi-twitter-x fs-5"></i></a>
+                                        <a href="https://www.linkedin.com/company/uadyinstitucional" class="text-white hover-gold"><i class="bi bi-linkedin fs-5"></i></a>
+                                        <a href="https://engage.cloud.microsoft/main/users/eyJfdHlwZSI6IlVzZXIiLCJpZCI6IjE1NDg1OTg4MDkifQ?domainRedirect=true" class="text-white hover-gold"><i class="bi bi-microsoft fs-5"></i></a>
+                                    </div>
+                            
+                                    <div class="d-flex justify-content-center justify-content-md-end gap-3">
+                                        <a href="https://uady.turnitin.com/" class="text-white hover-gold"><i class="bi bi-phone fs-5"></i></a>
+                                        <a href="https://open.spotify.com/show/6JPr4Lk6vMbYsDGFwT0Obe?si=83239cc6047e4f1a&nd=1&dlsi=892a13b1a90d4ab9" class="text-white hover-gold"><i class="bi bi-spotify fs-5"></i></a>
+                                        <a href="https://comunicacion.uady.mx/canal--uady" class="text-white hover-gold"><i class="bi bi-laptop fs-5"></i></a>
+                                        <a href="https://www.youtube.com/user/uadytv" class="text-white hover-gold"><i class="bi bi-laptop fs-5"></i></a>
+                                        <a href="https://www.youtube.com/channel/UCps3dWJry_asU0SHowQgq5w" class="text-white hover-gold"><i class="bi bi-laptop fs-5"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                          <x-button href="#" text="Protocolo de género">
-                          <svg xmlns="http://www.w3.org/2000/svg" 
-                                fill="none" 
-                                viewBox="0 0 24 24" 
-                                stroke-width="1.5" 
-                                stroke="currentColor" 
-                                width="24" 
-                                height="24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
-                            </svg>
-                        </x-button>
-
+                       
                     </div>
+
                 </div>
-
-                <nav class="navbar navbar-expand-sm bg-uady-gold py-1 nav-uady-gold">
-                    <div class="container-fluid justify-content-center">
-                        <ul class="navbar-nav gap-2 gap-md-5">
-                            <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Aspirantes</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Estudiantes</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Docentes</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Egresados</a></li>
-                        </ul>
-                    </div>
-                </nav>
-
-                <nav class="navbar navbar-expand-sm bg-uady-blue py-2 nav-uady-blue">
-                    <div class="container-fluid justify-content-center">
-                        <ul class="navbar-nav gap-2 gap-md-5 text-center">
-                            <li class="nav-item"><a class="nav-link" href="#">Nuestra Facultad</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Oferta Educativa</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Investigación</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Vinculación</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Internacionalización</a></li>
-                        </ul>
-                    </div>
-                </nav>
-
-            </div>
-        </div>
-    </header>
-        {{-- FIN HEADER --}}
+            </footer>
 
 
 
+        </main>
 
+        
 
-    <main class="container-fluid p-0">
-        @yield('content')
-    </main>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
 </html>
