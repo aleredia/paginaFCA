@@ -204,8 +204,14 @@
     </div>
 
     {{-- CONVOCATORIAS --}}
-    <div class="container py-5">
-        <h4 class="text-uady-blue mb-3">Convocatorias</h4>
+   <div class="container py-3">
+    <div class="d-flex align-items-center" style="cursor: pointer;" 
+         data-bs-toggle="collapse" data-bs-target="#collapseTableConvocatorias" 
+         aria-expanded="false" aria-controls="collapseTableConvocatorias">
+        <h4 class="text-uady-blue mb-0">Convocatorias</h4>
+        <i class="ms-2 bi bi-chevron-down"></i> </div>
+
+    <div class="collapse mt-3" id="collapseTableConvocatorias">
         <div class="table-responsive shadow-sm">
             <table class="table table-hover">
                 <thead class="table-light">
@@ -216,7 +222,6 @@
                         <th>Tipo</th>
                     </tr>
                 </thead>
-
                 <tbody>
                     @foreach($convocatorias as $convocatoria)
                     <tr>
@@ -230,10 +235,20 @@
             </table>
         </div>
     </div>
+</div>
+
+<hr class="container">
 
     {{-- avisos --}}
-    <div class="container py-5">
-        <h4 class="text-uady-blue mb-3">Convocatorias</h4>
+ <div class="container py-3">
+    <div class="d-flex align-items-center" style="cursor: pointer;" 
+         data-bs-toggle="collapse" data-bs-target="#collapseTableAvisos" 
+         aria-expanded="false" aria-controls="collapseTableAvisos">
+        <h4 class="text-uady-blue mb-0">Avisos</h4>
+        <i class="ms-2 bi bi-chevron-down"></i>
+    </div>
+
+    <div class="collapse mt-3" id="collapseTableAvisos">
         <div class="table-responsive shadow-sm">
             <table class="table table-hover">
                 <thead class="table-light">
@@ -244,7 +259,6 @@
                         <th>Cierre</th>
                     </tr>
                 </thead>
-
                 <tbody>
                     @foreach($avisos as $aviso)
                     <tr>
@@ -258,7 +272,7 @@
             </table>
         </div>
     </div>
-    
+</div>
 
     
         
