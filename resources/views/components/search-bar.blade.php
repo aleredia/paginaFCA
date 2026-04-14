@@ -1,5 +1,5 @@
 
-<div class="input-group input-group-sm border-bottom border-secondary border-2">
+<div class="input-group input-group-sm border-bottom border-white border-2">
     <input 
         type="text" 
         class="form-control border-0 shadow-none bg-transparent" 

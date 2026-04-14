@@ -4,11 +4,11 @@
 
 @section('content')
     
-    <x-hero>
+    <x-hero imagen="img/fondoo.jpg">
         Facultad de Contaduría<br>y Administración
     </x-hero>
 
-    <div class="w-100 bg-uady-blue text-white text-center py-3">
+    <div class="w-100 bg-uady-gold text-white text-center py-3">
         <p class="m-0 fs-6">Bienvenidos a la Facultad de Contaduría y Administración</p>
     </div>
 
@@ -205,67 +205,82 @@
 
     {{-- CONVOCATORIAS --}}
     <div class="container py-5">
-        <h4 class="text-uady-blue mb-3">Convocatorias</h4>
-        <div class="table-responsive shadow-sm">
-            <table class="table table-hover">
-                <thead class="table-light">
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Inicio</th>
-                        <th>Cierre</th>
-                        <th>Tipo</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    @foreach($convocatorias as $convocatoria)
-                    <tr>
-                        <td><a href="#">{{ $convocatoria->nombre }}</a></td>
-                        <td>{{ $convocatoria->inicio }}</td>
-                        <td>{{ $convocatoria->cierre }}</td>
-                        <td>{{ $convocatoria->tipo }}</td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
+        <div class="d-flex align-items-center gap-2 mb-4">
+            <h4 class="text-uady-blue fw-bold mb-0">Convocatorias</h4>
         </div>
+
+        <div class="table-modern">
+
+            @foreach($convocatorias as $convocatoria)
+            <div class="row-item d-flex flex-wrap justify-content-between align-items-center">
+
+                <div class="col-md-4 fw-semibold text-uady-blue">
+                    {{ $convocatoria->nombre }}
+                </div>
+
+                <div class="col-md-2 text-muted small">
+                    <i class="bi bi-calendar-event me-1 text-warning"></i>
+                    {{ $convocatoria->inicio }}
+                </div>
+
+                <div class="col-md-2 text-muted small">
+                    <i class="bi bi-calendar-x me-1 text-danger"></i>
+                    {{ $convocatoria->cierre }}
+                </div>
+
+                <div class="col-md-2">
+                    <span class="badge badge-custom">
+                        {{ $convocatoria->tipo }}
+                    </span>
+                </div>
+
+                <div class="col-md-2 text-end">
+                    <a href="#" class="btn-ver">Ver</a>
+                </div>
+
+            </div>
+            @endforeach
+
+        </div>
+
     </div>
 
     {{-- avisos --}}
     <div class="container py-5">
-        <h4 class="text-uady-blue mb-3">Convocatorias</h4>
-        <div class="table-responsive shadow-sm">
-            <table class="table table-hover">
-                <thead class="table-light">
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Descripcion</th>
-                        <th>Inicio</th>
-                        <th>Cierre</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    @foreach($avisos as $aviso)
-                    <tr>
-                        <td><a href="#">{{ $aviso->nombre }}</a></td>
-                        <td>{{ $aviso->descripcion }}</td>
-                        <td>{{ $aviso->inicio }}</td>
-                        <td>{{ $aviso->cierre }}</td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
+        <div class="d-flex align-items-center gap-2 mb-4">
+            <h4 class="text-uady-blue fw-bold mb-0">Avisos</h4>
         </div>
+
+        <div class="table-modern">
+            @foreach($avisos as $aviso)
+            <div class="row-item d-flex flex-column flex-md-row justify-content-between gap-3">
+
+                <div class="flex-grow-1">
+                    <div class="fw-semibold text-uady-blue">
+                        {{ $aviso->nombre }}
+                    </div>
+                    <div class="text-muted small mt-1">
+                        {{ Str::limit($aviso->descripcion) }}
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column flex-md-row align-items-md-center gap-3 text-muted small">
+                    <div>
+                        <i class="bi bi-calendar-event me-1 text-warning"></i>
+                        {{ $aviso->inicio }}
+                    </div>
+                    <div>
+                        <a href="#" class="btn-ver">Ver</a>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+
+        </div>
+
     </div>
     
 
     
-        
-
-
-
-
-
-
+    
 @endsection

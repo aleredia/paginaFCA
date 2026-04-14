@@ -34,5 +34,6 @@ class PrincipalController extends Controller
         $avisos = Aviso::all();
 
         return view('principal', compact('evento1','evento2','evento3','evento4','evento5','evento6','evento7','apartados', 'curso1','curso2','curso3','curso4','curso5','convocatorias','avisos'));
+        
     }
 }
