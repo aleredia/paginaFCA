@@ -1,21 +1,22 @@
 @extends('layouts.secondary')
 
-@section('title', 'Docentes')
+@section('title', 'Estudiantes')
 
-@section('page-title', 'Docentes')
+@section('page-title', 'Estudiantes')
 
-@section('page-subtitle', 'Información para los docentes')
+@section('page-subtitle', 'Información para los estudiantes')
 
 @section('banner')
-    <x-banner imagen="img/docente.png" texto="Bienvenido Docente" />
+    <x-banner imagen="img/estudiante.jpg" texto="Bienvenido Estudiante" />
 @endsection
 
 @section('content')
 
+
     {{-- Centro de Innovación Pedagógica --}}
     <div class="row align-items-center">
         <div class="col-md-6">
-            <h5 class="fw-bold">PCentro de Innovación Pedagógica</h5>
+            <h5 class="fw-bold">Coordinación de Becas y Programa Padrino Académico</h5>
             <p>
                 El Centro de Innovación Pedagógica (CIP) de la Facultad de Contaduría y Administración (FCA) de la Universidad Autónoma de Yucatán (UADY) impulsa la mejora continua de la práctica docente y la calidad educativa. Su propósito es apoyar a los docentes mediante la innovación pedagógica, la investigación educativa y la integración de tecnologías emergentes, fomentando un aprendizaje significativo y pertinente.
             </p>
@@ -79,5 +80,8 @@
             </div>
         </div>
     </div>
+    
+
+    
 
 @endsection

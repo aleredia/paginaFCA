@@ -40,10 +40,10 @@
     </div>
 
     {{-- SEGUNDO NIVEL (SUBMENU)--}}
-    <div class="border-top py-2 bg-light">
+    <div class="border-top py-2" style="background-color: #c99700;">
         <div class="container d-flex justify-content-center gap-4 flex-wrap">
             @foreach($apartados->slice(10,5) as $apartado)
-                <a href="#" class="text-decoration-none text-secondary small">
+                <a href="#" class="text-decoration-none text-white small">
                     {{ $apartado->nombre }}
                 </a>
             @endforeach

@@ -8,7 +8,7 @@
         Facultad de Contaduría<br>y Administración
     </x-hero>
 
-    <div class="w-100 bg-uady-gold text-white text-center py-3">
+    <div class="w-100 bg-uady-blue text-white text-center py-3">
         <p class="m-0 fs-6">Bienvenidos a la Facultad de Contaduría y Administración</p>
     </div>
 

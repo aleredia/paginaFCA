@@ -75,6 +75,7 @@
             .nav-main .nav-link:hover {
                 background: #c99700;
                 color: #202020;
+                border-radius: 40px;
             }
 
             /* BOTONES SUPERIORES */
@@ -90,6 +91,7 @@
             .quick-link:hover {
                 background: #c99700;
                 color: #202020;
+                border-radius: 40px;
             }
 
             /* SEARCH */
@@ -106,19 +108,11 @@
                 transition: 0.3s;
             }
 
-            .search-box input:focus {
+            .search-box input:focus {z
                 outline: none;
                 border-color: #eb2525;
                 background: white;
                 box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
-            }
-
-            .search-box i {
-                position: absolute;
-                top: 50%;
-                left: 10px;
-                transform: translateY(-50%);
-                color: white;
             }
 
             .bg-footer-custom {

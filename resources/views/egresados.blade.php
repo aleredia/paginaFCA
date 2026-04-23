@@ -1,13 +1,13 @@
 @extends('layouts.secondary')
 
-@section('title', 'Docentes')
+@section('title', 'Egresados')
 
-@section('page-title', 'Docentes')
+@section('page-title', 'Egresados')
 
-@section('page-subtitle', 'Información para los docentes')
+@section('page-subtitle', 'Información para los Egresados')
 
 @section('banner')
-    <x-banner imagen="img/docente.png" texto="Bienvenido Docente" />
+    <x-banner imagen="img/egresado.png" texto="Bienvenido Egresados" />
 @endsection
 
 @section('content')

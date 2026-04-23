@@ -26,3 +26,8 @@ Route::get('/docente', function () {
     $apartados = Apartado::all();
     return view('docente', compact('apartados'));
 })->name('docente');
+
+Route::get('/egresados', function () {
+    $apartados = Apartado::all();
+    return view('egresados', compact('apartados'));
+})->name('egresados');

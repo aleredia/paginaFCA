@@ -66,6 +66,7 @@
         .nav-main .nav-link:hover {
             background: #c99700;
             color: #202020;
+            border-radius: 40px;
         }
 
         /* BOTONES SUPERIORES */
@@ -81,6 +82,7 @@
         .quick-link:hover {
             background: #c99700;
             color: #202020;
+            border-radius: 40px;
         }
 
         /* SEARCH */
@@ -117,58 +119,7 @@
         }
 
 
-        /* CONTENEDOR PRINCIPAL */
-        .main-card {
-            background: white;
-            border-radius: 14px;
-            padding: 30px;
-        }
-
-        .section-card {
-            background: #ffffff;
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            padding: 20px;
-        }
-
-
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .custom-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: 0.3s;
-            border: 1px solid #e5e7eb;
-        }
-
-        .custom-card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-
-        .card-body-custom {
-            padding: 15px;
-        }
-
-        .btn-ver-mas {
-            display: inline-block;
-            margin-top: 10px;
-            font-size: 14px;
-            font-weight: 600;
-            color: #2563eb;
-            text-decoration: none;
-        }
-
-        .btn-ver-mas:hover {
-            color: #1d4ed8;
-        }
-
+        /* BANNER DE LAS VISTAS */
         .banner-container {
             position: relative;
             width: 100%;
@@ -183,17 +134,45 @@
             object-fit: cover;
         }
 
-        /* overlay opcional */
-        .banner-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 15px;
-            background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
-            color: white;
+        /* CARDS DE LAS VISTAS */
+        .main-card {
+            background: white;
+            border-radius: 14px;
+            padding: 30px;
+             align-items: center;
+            text-align: center;
         }
 
+        .custom-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e5e7eb;
+            align-items: center;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .custom-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-body-custom {
+            padding: 15px;
+        }
+
+        .btn-ver-mas {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #2563eb;
+        }
+
+        .btn-ver-mas:hover {
+            color: #1d4ed8;
+        }
         
     </style>
 </head>
