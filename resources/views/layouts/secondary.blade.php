@@ -183,49 +183,45 @@
 
 
         /* CARDS */
-.section-gray {
-    background-color: #f0f2f5;
-    padding: 60px 0;
-    margin: 40px -30px;
-    border-radius: 20px;
-}
+        .section-gray {
+            background-color: #f0f2f5;
+            padding: 60px 0;
+            margin: 40px -30px;
+            border-radius: 20px;
+        }
 
-.custom-card {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    border: none;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    transition: 0.3s;
-    margin-top: 0 !important; 
-}
-
-
-.card-body-custom {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 1.5rem;
-}
-
-/* TABLA DOCENTES*/
-.table-wrapper {
-    background: white;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-
-.main-card {
-    text-align: left !important;
-    padding: 20px !important;
-}
+        .custom-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+            margin-top: 0 !important; 
+        }
 
 
+        .card-body-custom {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 1.5rem;
+        }
 
+        /* TABLA DOCENTES*/
+        .table-wrapper {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
 
-        
+        .main-card {
+            text-align: left !important;
+            padding: 20px !important;
+        }
+
         
     </style>
 </head>
