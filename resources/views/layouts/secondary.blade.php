@@ -84,36 +84,43 @@
             color: #202020;
             border-radius: 40px;
         }
-
-        /* SEARCH */
-        .search-box {
+        
+        /*DROPDOWN DEL NAVBAR*/
+        .dropdown-custom{
             position: relative;
         }
 
-        .search-box input {
-            border-radius: 20px;
-            padding: 8px 15px 8px 35px;
-            border: 1px solid #e5e7eb;
-            background: #c99700;
-            width: 220px;
+        .dropdown-menu-custom{
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 200px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            z-index: 1000;
+        }
+
+        .dropdown-item-custom{
+            display: block;
+            padding: 12px 15px;
+            text-decoration: none;
+            color: black;
             transition: 0.3s;
         }
 
-        .search-box input:focus {
-            outline: none;
-            border-color: #eb2525;
-            background: white;
-            box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+        .dropdown-item-custom:hover{
+            background: #f2f2f2;
         }
 
-        .search-box i {
-            position: absolute;
-            top: 50%;
-            left: 10px;
-            transform: translateY(-50%);
-            color: white;
+        .dropdown-custom:hover .dropdown-menu-custom{
+            display: block;
         }
-
+        
+        
+        /*FOOTER*/
         .bg-footer-custom {
             background-color: #021A54;
         }
@@ -173,13 +180,59 @@
         .btn-ver-mas:hover {
             color: #1d4ed8;
         }
+
+
+        /* CARDS */
+.section-gray {
+    background-color: #f0f2f5;
+    padding: 60px 0;
+    margin: 40px -30px;
+    border-radius: 20px;
+}
+
+.custom-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: 0.3s;
+    margin-top: 0 !important; 
+}
+
+
+.card-body-custom {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem;
+}
+
+/* TABLA DOCENTES*/
+.table-wrapper {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.main-card {
+    text-align: left !important;
+    padding: 20px !important;
+}
+
+
+
+
+        
         
     </style>
 </head>
 
 <body>
 
-    {{-- HEADER GLOBAL --}}
+    {{-- HEADER --}}
     <x-header :apartados="$apartados" />
 
     {{-- ENCABEZADO DE PÁGINA--}}
@@ -205,10 +258,8 @@
 
 
     {{-- CONTENIDO --}}
-    <main class="container mb-5">
-        <div class="main-card shadow-sm">
-            @yield('content')
-        </div>
+    <main class="container py-5">
+        @yield('content')
     </main>
 
     {{-- FOOTER --}}

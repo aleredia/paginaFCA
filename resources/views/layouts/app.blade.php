@@ -78,6 +78,40 @@
                 border-radius: 40px;
             }
 
+            /*DROPDOWN DEL NAVBAR*/
+            .dropdown-custom{
+                position: relative;
+            }
+
+            .dropdown-menu-custom{
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background: white;
+                min-width: 200px;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+                z-index: 1000;
+            }
+
+            .dropdown-item-custom{
+                display: block;
+                padding: 12px 15px;
+                text-decoration: none;
+                color: black;
+                transition: 0.3s;
+            }
+
+            .dropdown-item-custom:hover{
+                background: #f2f2f2;
+            }
+
+            .dropdown-custom:hover .dropdown-menu-custom{
+                display: block;
+            }
+
             /* BOTONES SUPERIORES */
             .quick-link {
                 font-size: 13px;
@@ -92,31 +126,6 @@
                 background: #c99700;
                 color: #202020;
                 border-radius: 40px;
-            }
-
-            /* SEARCH */
-            .search-box {
-                position: relative;
-            }
-
-            .search-box input {
-                border-radius: 20px;
-                padding: 8px 15px 8px 35px;
-                border: 1px solid #e5e7eb;
-                background: #c99700;
-                width: 220px;
-                transition: 0.3s;
-            }
-
-            .search-box input:focus {z
-                outline: none;
-                border-color: #eb2525;
-                background: white;
-                box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
-            }
-
-            .bg-footer-custom {
-                background-color: #021A54;
             }
 
             /*ESTILOS TABLAS*/
@@ -154,6 +163,58 @@
             .btn-ver:hover {
                 color: #1d4ed8;
             }
+
+            /* HERO*/
+            .hero{
+                min-height: 90vh;
+                overflow: hidden;
+            }
+
+            .hero-title{
+                font-size: clamp(2.5rem, 6vw, 5rem);
+                line-height: 1.1;
+            }
+
+            /* TITULOS */
+            .section-title{
+                font-size: 2rem;
+                font-weight: 700;
+                color: #021A54;
+            }
+
+            /* CARDS MODERNAS */
+            .news-card{
+                border: none;
+                border-radius: 20px;
+                overflow: hidden;
+                box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            }
+
+            /* EVENTOS */
+            .event-card{
+                background: white;
+                border-left: 5px solid #c99700;
+                border-radius: 15px;
+                padding: 20px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            }
+
+            .row-item:hover{
+                transform: translateY(-3px);
+                box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            }
+
+            /*FOOTER*/
+            .bg-footer-custom {
+                background-color: #021A54;
+            }
+
+            
+
+
+
+
+            
                 
         </style>
     </head>
