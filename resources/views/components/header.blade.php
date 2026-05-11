@@ -24,7 +24,7 @@
                         Aspirantes
                     </a>
                     <div class="dropdown-menu-custom">
-                        <a href="{{ route('aspirante') }}" class="dropdown-item-custom">
+                        <a href="{{ route('oferta') }}" class="dropdown-item-custom">
                             Oferta Educativa
                         </a>
                     </div>
@@ -43,16 +43,16 @@
                         Nuestra Facultad
                     </a>
                     <div class="dropdown-menu-custom">
-                        <a href="{{ route('aspirante') }}" class="dropdown-item-custom">
+                        <a href="{{ route('egresados') }}" class="dropdown-item-custom">
                             Egresados
                         </a>
-                        <a href="{{ route('aspirante') }}" class="dropdown-item-custom">
+                        <a href="{{ route('investigacion') }}" class="dropdown-item-custom">
                             Investigación
                         </a>
-                        <a href="{{ route('aspirante') }}" class="dropdown-item-custom">
+                        <a href="{{ route('vinculacion') }}" class="dropdown-item-custom">
                             Vinculación
                         </a>
-                        <a href="{{ route('aspirante') }}" class="dropdown-item-custom">
+                        <a href="{{ route('internalizacion') }}" class="dropdown-item-custom">
                             Internalización
                         </a>
                     </div>

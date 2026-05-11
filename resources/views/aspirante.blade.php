@@ -69,14 +69,14 @@
 
     </div>
 
-    {{-- BLOQUE QUE ES EQUIVALENTE A LA TABLA DE MAESTROS --}}
+    {{--  --}}
     <div class="section-gray px-4 py-5 mb-5">
         <div class="row text-center">
             <div class="col-12">
                 <h5 class="fw-bold text-uady-blue mb-3">¿Tienes dudas sobre que estudiar?</h5>
                 <p class="text-muted">Consulta nuestra oferta académica.</p>
                 <div class="mt-4">
-                    <a href="#" class="btn btn-primary px-4 py-2" style="border-radius: 50px; background-color: #021A54; border: none;">
+                    <a href="{{ route('oferta') }}" class="btn btn-primary px-4 py-2" style="border-radius: 50px; background-color: #021A54; border: none;">
                         Oferta
                     </a>
                 </div>

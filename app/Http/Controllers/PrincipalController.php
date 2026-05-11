@@ -39,10 +39,7 @@ class PrincipalController extends Controller
 
     public function docente() 
 {
-    // Obtenemos los docentes paginados de 10 en 10
     $docentes = \App\Models\Docente::paginate(10);
-
-    // Retornamos la vista pasándole la variable
     return view('docente', compact('docentes'));
 }
 }

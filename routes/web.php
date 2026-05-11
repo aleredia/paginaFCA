@@ -33,3 +33,23 @@ Route::get('/egresados', function () {
     $apartados = Apartado::all();
     return view('egresados', compact('apartados'));
 })->name('egresados');
+
+Route::get('/investigacion', function () {
+    $apartados = Apartado::all();
+    return view('investigacion', compact('apartados'));
+})->name('investigacion');
+
+Route::get('/vinculacion', function () {
+    $apartados = Apartado::all();
+    return view('vinculacion', compact('apartados'));
+})->name('vinculacion');
+
+Route::get('/internalizacion', function () {
+    $apartados = Apartado::all();
+    return view('internalizacion', compact('apartados'));
+})->name('internalizacion');
+
+Route::get('/oferta', function () {
+    $apartados = Apartado::all();
+    return view('oferta', compact('apartados'));
+})->name('oferta');
