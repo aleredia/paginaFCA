@@ -223,6 +223,58 @@
             padding: 20px !important;
         }
 
+        /* ESTILOS PARA LA OFERTA */
+          .bg-uady-gold-soft {
+        background-color: rgba(201, 151, 0, 0.08); 
+        transition: 0.3s;
+        }
+
+        .bg-uady-gold-soft:hover {
+            background-color: rgba(201, 151, 0, 0.15);
+        }
+
+        .zoom-box {
+            cursor: pointer;
+        }
+
+        .zoom-box img {
+            transition: transform 0.6s ease;
+        }
+
+        .zoom-box:hover img {
+            transform: scale(1.1); 
+        }
+
+        .btn-uady-blue {
+            background-color: #021A54;
+            color: white;
+            border-radius: 50px;
+            padding: 10px 25px;
+            transition: 0.3s;
+            border: none;
+        }
+
+        .btn-uady-blue:hover {
+            background-color: #c99700;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .reveal-block {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal-block.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .border-uady-gold-thin {
+            border: 1px solid rgba(201, 151, 0, 0.3);
+        }
+
         
     </style>
 </head>
