@@ -39,7 +39,7 @@ class PrincipalController extends Controller
 
     public function docente() 
 {
-    $docentes = \App\Models\Docente::paginate(10);
+    $docentes = \App\Models\Docente::get();
     return view('docente', compact('docentes'));
 }
 }

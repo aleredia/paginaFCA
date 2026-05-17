@@ -27,7 +27,7 @@
 
         /* HEADER*/
         .header {
-            background: #ffffff;
+            background: #021A54;
             border-bottom: 1px solid #e8ebe5;
             position: sticky;
             top: 0;
@@ -42,23 +42,22 @@
         .brand-text {
             font-size: 14px;
             line-height: 1.2;
-            color: #111827;
         }
 
         .brand-text strong {
             display: block;
             font-size: 15px;
-            color: #111827;
+            color: #ffffff;
         }
 
         .brand-text span {
             font-size: 12px;
-            color: #111827;
+            color: #ffffff;
         }
 
-            /* NAV */
+        /* NAV */
         .nav-main .nav-link {
-            color: #111827;
+            color: #ffffff;
             font-weight: 500;
             padding: 8px 12px;
             border-radius: 8px;
@@ -71,10 +70,25 @@
             border-radius: 40px;
         }
 
+        /* BOTONES SUPERIORES */
+        .quick-link {
+            font-size: 13px;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 6px 10px;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .quick-link:hover {
+            background: #c99700;
+            color: #202020;
+            border-radius: 40px;
+        }
+        
         /*DROPDOWN DEL NAVBAR*/
         .dropdown-custom{
             position: relative;
-            color:#111827;
         }
 
         .dropdown-menu-custom{
@@ -105,21 +119,6 @@
         .dropdown-custom:hover .dropdown-menu-custom{
             display: block;
         }
-
-        .quick-link {
-            font-size: 13px;
-            color:#111827;
-            text-decoration: none;
-            padding: 6px 10px;
-            border-radius: 6px;
-            transition: 0.3s;
-        }
-
-        .quick-link:hover {
-            background: #c99700;
-            color: #202020;
-            border-radius: 40px;
-        }
         
         
         /*FOOTER*/
@@ -135,7 +134,6 @@
             height: 220px;
             overflow: hidden;
             border-radius: 12px;
-            background: #021A54;
         }
 
         .banner-img {
@@ -146,7 +144,7 @@
 
         /* CARDS DE LAS VISTAS */
         .main-card {
-            background: rgb(255, 255, 255);
+            background: white;
             border-radius: 14px;
             padding: 30px;
              align-items: center;
@@ -283,133 +281,6 @@
             background-color: #010c26; 
         }
 
-    .service-card-new{
-        background: white;
-        border-radius: 22px;
-        overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        transition: .35s ease;
-        border: 1px solid #c99700;
-        height: 100%;
-    }
-
-    .service-card-new:hover{
-        transform: translateY(-6px);
-        box-shadow: 0 18px 40px rgba(0,0,0,0.12);
-    }
-
-    .service-image-new{
-        position: relative;
-        height: 240px;
-        overflow: hidden;
-    }
-
-    .service-image-new img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: .5s;
-    }
-
-    .service-card-new:hover .service-image-new img{
-        transform: scale(1.08);
-    }
-
-    .service-overlay-new{
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(to top, rgba(2,26,84,.75), transparent);
-    }
-
-    .service-body-new{
-        padding: 25px;
-    }
-
-    .service-title-new{
-        color: #021A54;
-        font-weight: 700;
-        margin-bottom: 15px;
-    }
-
-    .service-description-new{
-        color: #6b7280;
-        line-height: 1.7;
-        text-align: justify;
-        font-size: 0.95rem;
-    }
-
-    /* CONTACTO */
-
-    .contact-card-new{
-        margin-top: 25px;
-        background: linear-gradient(135deg, #021A54, #0b3b60);
-        border-radius: 20px;
-        padding: 18px;
-    }
-
-    .contact-wrapper-new{
-        display: flex;
-        align-items: center;
-        gap: 18px;
-    }
-
-    .contact-photo-new{
-        width: 90px;
-        height: 90px;
-        border-radius: 50%;
-        overflow: hidden;
-        border: 4px solid rgba(255,255,255,.2);
-        flex-shrink: 0;
-    }
-
-    .contact-photo-new img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .contact-info-new h6{
-        color: white;
-        font-weight: 700;
-        margin-bottom: 8px;
-    }
-
-    .contact-info-new p{
-        color: rgba(255,255,255,.9);
-        margin-bottom: 5px;
-        font-size: 0.92rem;
-    }
-
-    .contact-info-new i{
-        color: #facc15;
-    }
-
-    .cta-estudiantes{
-        background: linear-gradient(135deg, #021A54, #0b3b60);
-        border-radius: 28px;
-        padding: 60px 30px;
-        text-align: center;
-        color: white;
-    }
-
-    .btn-estudiantes{
-        background: #c99700;
-        border: none;
-        color: white;
-        padding: 12px 30px;
-        border-radius: 50px;
-        font-weight: 600;
-        transition: .3s;
-        text-decoration: none;
-        display: inline-block;
-    }
-
-    .btn-estudiantes:hover{
-        background: #ddb52a;
-        color: white;
-        transform: translateY(-2px);
-    }
-
         .hero-spaces-bg {
             position: absolute;
             top: 0;
@@ -512,6 +383,7 @@
         left: 0;
         width: 100%;
         height: 100%;
+        
         background: linear-gradient(180deg, rgba(1, 12, 38, 0) 40%, rgba(1, 12, 38, 0.85) 100%);
         transition: all 0.4s ease-in-out;
     }
@@ -646,16 +518,16 @@
     <x-header :apartados="$apartados" />
 
     {{-- ENCABEZADO DE PÁGINA--}}
-    <div class="page-header py-3 mb-4" 
-        style="background: #021A54;">
+    <div class="page-header py-3 mb-4">
         <div class="container">
-            <h2 class="fw-bold mb-1" style="color: #ffffff;">
+            <h2 class="text-center fw-bold text-uady-blue">
                 @yield('page-title')
             </h2>
             {{-- SUBTÍTULO --}}
-            <p class="small mb-0" style="color: #e0e0e0;">
+            <p class="text-center small mb-0">
                 @yield('page-subtitle')
             </p>
+
         </div>
     </div>
 
