@@ -1,83 +1,208 @@
 @extends('layouts.secondary')
+@section('page-title', 'Egresados')
+@section('page-subtitle', 'Información para egresados de la Facultad de COntaduría y Administración')
 
 @section('title', 'Egresados')
 
-@section('page-title', 'Egresados')
-
-@section('page-subtitle', 'Información para los Egresados')
-
-@section('banner')
-    <x-banner imagen="img/egresado.png" texto="Bienvenido Egresados" />
-@endsection
-
 @section('content')
 
-    {{-- Centro de Innovación Pedagógica --}}
-    <div class="row align-items-center">
-        <div class="col-md-6">
-            <h5 class="fw-bold">PCentro de Innovación Pedagógica</h5>
-            <p>
-                El Centro de Innovación Pedagógica (CIP) de la Facultad de Contaduría y Administración (FCA) de la Universidad Autónoma de Yucatán (UADY) impulsa la mejora continua de la práctica docente y la calidad educativa. Su propósito es apoyar a los docentes mediante la innovación pedagógica, la investigación educativa y la integración de tecnologías emergentes, fomentando un aprendizaje significativo y pertinente.
-            </p>
+{{--cards de información --}}
+<div class="container-fluid px-lg-5 mb-5 mt-4 animate-entrance">
+    <div class="row g-4 justify-content-center">
+        
+        <div class="col-md-4 col-12">
+            <a href="#" class="text-decoration-none egresado-link-card h-100 d-flex align-items-center p-4 rounded-4 shadow-sm bg-white">
+                <div class="icon-box-uady me-3 d-flex align-items-center justify-content-center rounded-3">
+                    {{-- El icono ya no lleva color en línea, lo maneja el CSS --}}
+                    <i class="bi bi-people-fill"></i>
+                </div>
+                <div>
+                    <h6 class="fw-bold text-uady-blue mb-1">Coordinación de Seguimiento</h6>
+                    <p class="small text-muted mb-0">Mantente en contacto con tu facultad y conoce los programas.</p>
+                </div>
+            </a>
         </div>
 
-        <div class="col-md-6">
-            <div class="custom-card">
-                <img src="{{ asset('img/inovacion.png') }}" alt="Imagen">
-                <div class="card-body-custom">
-                    <p class="text-muted small">
-                        ¡Explora más sobre el CIP y únete a la innovación educativa!
-                    </p>
-                    <a href="{{ route('aspirante') }}" class="btn-ver-mas">
-                        Ver más →
-                    </a>
+        <div class="col-md-4 col-12">
+            <a href="#" class="text-decoration-none egresado-link-card h-100 d-flex align-items-center p-4 rounded-4 shadow-sm bg-white">
+                <div class="icon-box-uady me-3 d-flex align-items-center justify-content-center rounded-3">
+                    <i class="bi bi-file-earmark-check-fill"></i>
                 </div>
-            </div>
+                <div>
+                    <h6 class="fw-bold text-uady-blue mb-1">Registro al EGEL</h6>
+                    <p class="small text-muted mb-0">Consulta las fechas, requisitos y procesos de inscripción.</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-4 col-12">
+            <a href="#" class="text-decoration-none egresado-link-card h-100 d-flex align-items-center p-4 rounded-4 shadow-sm bg-white">
+                <div class="icon-box-uady me-3 d-flex align-items-center justify-content-center rounded-3">
+                    <i class="bi bi-mortarboard-fill"></i>
+                </div>
+                <div>
+                    <h6 class="fw-bold text-uady-blue mb-1">Trámites de Titulación</h6>
+                    <p class="small text-muted mb-0">Guía paso a paso, documentación y opciones disponibles.</p>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+{{--ENCABEZADO ORGULLO FCA--}}
+<div class="egresados-hero-header position-relative overflow-hidden mb-5 rounded-4 shadow-sm animate-entrance">
+        <div class="hero-bg-image" style="background-image: url('{{ asset('img/egresado.png') }}');"></div>
+        <div class="hero-overlay-tint"></div>
+        
+        <div class="hero-content-text container text-center position-absolute top-50 start-50 translate-middle z-index-1">
+            <span class="text-uady-gold text-uppercase fw-bold tracking-wider small-title-badge mb-1 d-block">
+                <i class="bi bi-mortarboard me-2"></i>Memorandúm de generaciones
+            </span>
+            
+            <h1 class="hero-main-title fw-extrabold text-white mt-1 mb-3">
+                Orgullo Egresados FCA
+            </span></h1>
+            
+            <p class="hero-sub-text text-white-85 mx-auto mb-0">
+                Reconocimiento a nuestras generaciones y alumnos destacados que han dejado huella en la facultad.
+            </p>
+            <div class="custom-divider-line mx-auto mt-3"></div>
+        </div>
+</div>
+
+{{--GENEERACIONES  --}}
+<x-generaciones-list>
+
+    <x-generaciones-row 
+        image="img/gen1.png" 
+        subtitle="Egresados de los programas de Licenciatura." 
+        title="Generación XCVIII" 
+    />
+
+    <x-generaciones-row 
+        image="img/gen2.png"  
+        subtitle="Egresados de los programas de Licenciatura." 
+        title="Generación XLV" 
+    />
+
+    <x-generaciones-row 
+        image="img/gen3.png" 
+        subtitle="Egresados de los programas de Licenciatura." 
+        title="Generación XXXI" 
+    />
+
+    <x-generaciones-row 
+        image="img/gen4.png" 
+        subtitle="Egresados de los programas de Licenciatura." 
+        title="Generación XII" 
+    />
+
+</x-generaciones-list>
+
+{{--mejores promedios de licenciatura --}}
+<div class="container-fluid px-lg-5 mb-5 pt-5 animate-entrance">
+    
+    {{-- ENCABEZADO--}}
+    <div class="row justify-content-center mb-5">
+        <div class="col-md-8 col-12 text-center">
+            <span class="text-uady-blue text-uppercase fw-bold tracking-wider small-title-badge mb-2 d-block" style="letter-spacing: 2px; font-size: 0.85rem;">
+                <i class="bi bi-award-fill text-uady-gold me-1"></i> Excelencia Académica
+            </span>
+            <h2 class="display-6 fw-extrabold text-uady-gold m-0 text-uppercase prompt-title" style="font-weight: 800 !important; color: #c99700 !important; text-shadow: 0px 1px 1px rgba(0,0,0,0.05);">
+                Mejores Promedios de Licenciatura
+            </h2>
+            <div class="custom-divider-line mx-auto my-3" style="width: 50px; height: 3px; background-color: #021A54; border-radius: 2px;"></div>
+            <p class="text-muted mx-auto mb-0 small" style="max-width: 550px; font-size: 0.95rem;">
+                Reconocimiento institucional a los egresados con los puntajes más altos por programa académico.
+            </p>
         </div>
     </div>
 
-    {{-- PERSONAL DOCENTE --}}
-    <div class="row align-items-center">
-        <div class="col-md-6">
-            <h5 class="fw-bold">Personal Docente de la Facultad de Contaduría y Administración</h5>
-            <p>
-                La Facultad cuenta con 52 maestros de Tiempo Completo, de los cuales 22 (el 42%) cuenta con la certificación de la ANFECA, 26 tienen reconocimiento de Perfil Deseable PRODEP (50%) y 8 (el 15%) están adscritos al Sistema Nacional de Investigadores (SNI), del Conacyt. Complementan nuestra planta docente 4 profesores de Medio Tiempo y 108 de asignatura, todos profesionales altamente calificados, con amplia experiencia laboral y reconocida trayectoria en sus respectivas ramas, que en suma, hacen un total de 164 profesores.<br>
-            </p>
-        </div>
+    <div class="row g-4 justify-content-center">
+        
+        <x-alumno-card 
+            image="img/e2.jpg" 
+            name="ALAN JAIR CHÍ MONTALVO" 
+            badge="Generación XLV"
+        >
+            Egresado de la Licenciatura en Mercadotecnia y Negocios Internacionales, con un destacable promedio de <strong>97.33</strong>.
+        </x-alumno-card>
 
-        <div class="col-md-6">
-            <div class="custom-card">
-                <img src="{{ asset('img/docentes.jpg') }}" alt="Imagen">
-                <div class="card-body-custom">
-                    <h6 class="fw-bold">Personal</h6>
-                    <a href="{{ route('aspirante') }}" class="btn-ver-mas">
-                        Ver más →
-                    </a>
-                </div>
-            </div>
+        <x-alumno-card 
+            image="img/e4.jpg" 
+            name="JOSÉ CARLOS PIÑA TORRES" 
+            badge="Generación XXXI"
+        >
+            Egresado de la Licenciatura en <strong>Administración de Tecnologías de la Información</strong>, con un destacable promedio de <strong>92.50</strong>.
+        </x-alumno-card>
+
+        <x-alumno-card 
+            image="img/e3.jpg" 
+            name="LISSIE BEATRIZ CALDERÓN ALCOCER" 
+            badge="Generación XCVIII"
+        >
+            Egresada de <strong>Contaduría Pública</strong> con un destacable promedio de <strong>97.77</strong>.
+        </x-alumno-card>
+
+        <x-alumno-card 
+            image="img/e5.jpg" 
+            name="SALMA DEL PILAR TEJERO GAMBOA" 
+            badge="Generación XII"
+        >
+            Egresada de la Licenciatura en Administración, con un destacable promedio de <strong>94.50</strong>.
+        </x-alumno-card>
+
+    </div>
+</div>
+
+
+{{--mejores promedios de maestría--}}
+<div class="container-fluid px-lg-5 mb-5 pt-5">
+    
+    {{--ENCABEZADO --}}
+    <div class="row justify-content-center mb-5">
+        <div class="col-md-8 col-12 text-center">
+            <span class="text-uady-blue text-uppercase fw-bold tracking-wider small-title-badge mb-2 d-block" style="letter-spacing: 2px; font-size: 0.85rem;">
+                <i class="bi bi-mortarboard-fill text-uady-gold me-1"></i> Altos Estudios
+            </span>
+            <h2 class="display-6 fw-extrabold text-uady-gold m-0 text-uppercase prompt-title" style="font-weight: 800 !important; color: #c99700 !important; text-shadow: 0px 1px 1px rgba(0,0,0,0.05);">
+                Mejores Promedios de Maestría
+            </h2>
+            <div class="custom-divider-line mx-auto my-3" style="width: 50px; height: 3px; background-color: #021A54; border-radius: 2px;"></div>
+            <p class="text-muted mx-auto mb-0 small" style="max-width: 550px; font-size: 0.95rem;">
+                Reconocimiento a egresados con los mejores promedios por maestría.
+            </p>
         </div>
     </div>
 
-    {{-- BILBIOTECA --}}
-    <div class="row align-items-center">
-        <div class="col-md-6">
-            <h5 class="fw-bold">Servicios de la biblioteca del campus</h5>
-            <p>
-                La Biblioteca del Campus de Ciencias Sociales, Económico-Administrativas y Humanidades, cuenta con un amplio acervo de material bibliográfico de las áreas de Ciencias Sociales: Antropología, Psicología, Educación, Economía, Comercio Internacional, Derecho, Administración, Turismo, Comunicación, Literatura, Enseñanza del Inglés, etc. Dicho acervo está conformado por libros, tesis, publicaciones periódicas, folletos, discos compactos, bases de datos, entre otros.
-            </p>
-        </div>
+    <div class="row g-4 justify-content-center">
+        
+        <x-alumno-card 
+            image="img/e6.jpg" 
+            name="LIC. EN NEG. INTERN. Luis Pérez Gil Menéndez" 
+            badge="MAESTRÍA EN FINANZAS: Generación XXIII"
+        >
+            Egresado de la Maestría en Finanzas, con un destacable promedio de <strong>98.44</strong>.
+        </x-alumno-card>
 
-        <div class="col-md-6">
-            <div class="custom-card">
-                <img src="{{ asset('img/biblioteca.png') }}" alt="Imagen">
-                <div class="card-body-custom">
-                    <h6 class="fw-bold">Servicios</h6>
-                    <a href="{{ route('aspirante') }}" class="btn-ver-mas">
-                        Ver más →
-                    </a>
-                </div>
-            </div>
-        </div>
+          <x-alumno-card 
+            image="img/e7.jpg" 
+            name="LIC.CIENCIAS POLIT. Y REL. INTERN. Guillermo Josue Chanona Magaña" 
+            badge="MAESTRÍA GESTIÓN DE LA MERCADOTECNIA: Generación XIII"
+        >
+            Egresado de la Maestría en Gestión de la Mercadotecnia, con un destacable promedio de <strong>97.58</strong>.
+        </x-alumno-card>
+
+          <x-alumno-card 
+            image="img/e8.jpg" 
+            name="Contadora Publica Ariadna Jaqueline Martínez Baas" 
+            badge="MAESTRÍA EN ADMINISTRACIÓN TRIBUTARIA: Generación XXII"
+        >
+            Egresada de la Maestría en Administración Tributaria, con un destacable promedio de <strong>97.73</strong>.
+        </x-alumno-card>
+
     </div>
+</div>
 
 @endsection
