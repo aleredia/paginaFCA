@@ -5,13 +5,8 @@
 @section('content')
     
     <x-hero imagen="img/fondoo.jpg">
-        Facultad de Contaduría <br>
-        y Administración
+        Facultad de Contaduría y Administración
     </x-hero>
-
-    <div class="w-100 bg-uady-blue text-white text-center py-3">
-        <p class="m-0 fs-6">Bienvenidos a la Facultad de Contaduría y Administración</p>
-    </div>
 
 
     {{-- NOTICIAS - CARRUSEL --}}
@@ -20,23 +15,151 @@
             <h2 class="section-title mb-5">
                 Noticias Destacadas
             </h2>
+            <div id="noticiasCarousel" class="carousel slide" data-bs-ride="carousel">
+
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row g-4 justify-content-center">
+                            @foreach([$evento1,$evento2,$evento3,$evento4] as $evento)
+                            <div class="col-md-6 col-lg-3">
+                                <div class="card news-card h-100">
+                                    <img src="{{ asset('img/' . $evento->imagen) }}"
+                                        class="card-img-top"
+                                        style="height:220px; object-fit:cover;">
+                                    <div class="card-body">
+                                        <small class="text-muted">
+                                            {{ $evento->fecha }}
+                                        </small>
+                                        <h5 class="mt-2 fw-bold">
+                                            {{ $evento->titulo }}
+                                        </h5>
+
+                                        <p class="text-muted small">
+                                            {{ Str::limit($evento->descripcion, 90) }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="row g-4 justify-content-center">
+                            @foreach([$evento5,$evento6,$evento7] as $evento)
+                            <div class="col-md-6 col-lg-3">
+                                <div class="card news-card h-100">
+                                    <img src="{{ asset('img/' . $evento->imagen) }}"
+                                        class="card-img-top"
+                                        style="height:220px; object-fit:cover;">
+                                    <div class="card-body">
+                                        <small class="text-muted">
+                                            {{ $evento->fecha }}
+                                        </small>
+                                        <h5 class="mt-2 fw-bold">
+                                            {{ $evento->titulo }}
+                                        </h5>
+                                        <p class="text-muted small">
+                                            {{ Str::limit($evento->descripcion, 90) }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+
+                </div>
+
+                {{-- CONTROLES DE ABAJO --}}
+                <div class="d-flex justify-content-center align-items-center gap-3 mt-4">
+                    <button class="btn btn-outline-dark rounded-circle px-3"
+                        type="button"
+                        data-bs-target="#noticiasCarousel"
+                        data-bs-slide="prev">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <div class="carousel-indicators position-relative m-0">
+                        <button type="button"
+                            data-bs-target="#noticiasCarousel"
+                            data-bs-slide-to="0"
+                            class="active"
+                            aria-current="true">
+                        </button>
+                        <button type="button"
+                            data-bs-target="#noticiasCarousel"
+                            data-bs-slide-to="1">
+                        </button>
+                    </div>
+                    <button class="btn btn-outline-dark rounded-circle px-3"
+                        type="button"
+                        data-bs-target="#noticiasCarousel"
+                        data-bs-slide="next">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    
+
+
+    {{-- AGENDA --}}
+    <section class="agenda-section py-5">
+
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-7">
+                    <h2 class="section-title mt-3">
+                        Avisos y agenda universitaria
+                    </h2>
+                </div>
+                <div class="col-lg-5 text-lg-end mt-4 mt-lg-0">
+                    <a href="#" class="agenda-btn-top">
+                        Ver calendario completo
+                        <i class="bi bi-calendar-event ms-2"></i>
+                    </a>
+                </div>
+            </div>
+
             <div class="row g-4">
-                @foreach([$evento1,$evento2,$evento3,$evento4] as $evento)
-                <div class="col-md-6 col-lg-3">
-                    <div class="card news-card h-100">
-                        <img src="{{ asset('img/' . $evento->imagen) }}"
-                            class="card-img-top"
-                            style="height:220px; object-fit:cover;">
-                        <div class="card-body">
-                            <small class="text-muted">
-                                {{ $evento->fecha }}
-                            </small>
-                            <h5 class="mt-2 fw-bold">
-                                {{ $evento->titulo }}
-                            </h5>
-                            <p class="text-muted small">
-                                {{ Str::limit($evento->descripcion, 90) }}
-                            </p>
+                @foreach([$curso1,$curso2,$curso3,$curso4] as $curso)
+                <div class="col-lg-6">
+                    <div class="agenda-card h-100">
+                        <div class="agenda-content">
+                            <div class="agenda-left">
+                                <div>
+                                    <span class="agenda-tag">
+                                        Evento universitario
+                                    </span>
+                                    <h4 class="agenda-name">
+                                        {{ $curso->titulo }}
+                                    </h4>
+                                </div>
+
+                            </div>
+
+                            <div class="agenda-right">
+                                <div class="agenda-date-box">
+                                    <span class="agenda-date-label">
+                                        Fecha
+                                    </span>
+                                    <span class="agenda-date">
+                                        {{ $curso->fecha }}
+                                    </span>
+                                </div>
+                                <div class="agenda-time-box">
+                                    <i class="bi bi-clock-fill"></i>
+                                    <span>
+                                        {{ $curso->hora }}
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -45,35 +168,6 @@
         </div>
     </section>
 
-    {{-- AGENDA - CARRUSEL --}}
-    <section class="py-5 bg-light">
-        <div class="container">
-            <h2 class="section-title mb-5">
-                Agenda Universitaria
-            </h2>
-            <div class="row g-4">
-                @foreach([$curso1,$curso2,$curso3,$curso4] as $curso)
-                <div class="col-lg-6">
-                    <div class="event-card">
-                        <div class="d-flex justify-content-between">
-                            <div>
-                                <h5 class="fw-bold">
-                                    {{ $curso->titulo }}
-                                </h5>
-                                <p class="text-muted mb-0">
-                                    {{ $curso->fecha }}
-                                </p>
-                            </div>
-                            <div class="text-uady-gold fw-bold">
-                                {{ $curso->hora }}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
 
     {{-- REDES SOCIALES --}}
     <div class="container py-5">
@@ -96,73 +190,126 @@
         </div>
     </div>
 
+
     {{-- CONVOCATORIAS --}}
-    <div class="container py-5">
-        <div class="d-flex align-items-center gap-2 mb-4">
-            <h4 class="text-uady-blue fw-bold mb-0">Convocatorias</h4>
-        </div>
-        <div class="table-modern">
-            @foreach($convocatorias as $convocatoria)
-            <div class="row-item d-flex flex-wrap justify-content-between align-items-center">
-                <div class="col-md-4 fw-semibold text-uady-blue">
-                    {{ $convocatoria->nombre }}
+    <section class="convocatorias-section py-5">
+        <div class="container">
+
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-7">
+                    <h2 class="section-title mt-3">
+                        Convocatorias y programas
+                    </h2>
                 </div>
-                <div class="col-md-2 text-muted small">
-                    <i class="bi bi-calendar-event me-1 text-warning"></i>
-                    {{ $convocatoria->inicio }}
-                </div>
-                <div class="col-md-2 text-muted small">
-                    <i class="bi bi-calendar-x me-1 text-danger"></i>
-                    {{ $convocatoria->cierre }}
-                </div>
-                 <div class="col-md-2">
-                    <span class="badge badge-custom">
-                        {{ $convocatoria->tipo }}
-                    </span>
-                </div>
-                <div class="col-md-2 text-end">
-                    <a href="#" class="btn-ver">Ver</a>
+                <div class="col-lg-5 text-lg-end mt-4 mt-lg-0">
+                    <a href="#" class="btn-explorar">
+                        Explorar todas
+                        <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
                 </div>
             </div>
-            @endforeach
-        </div>
-    </div>
 
-    {{-- avisos --}}
-    <div class="container py-5">
-        <div class="d-flex align-items-center gap-2 mb-4">
-            <h4 class="text-uady-blue fw-bold mb-0">Avisos</h4>
-        </div>
-        <div class="table-modern">
-            @foreach($avisos as $aviso)
-            <div class="row-item d-flex flex-column flex-md-row justify-content-between gap-3">
-                <div class="flex-grow-1">
-                    <div class="fw-semibold text-uady-blue">
-                        {{ $aviso->nombre }}
-                    </div>
-                    <div class="text-muted small mt-1">
-                        {{ Str::limit($aviso->descripcion) }}
+            <div class="row g-4">
+
+                @foreach($convocatorias as $convocatoria)
+                <div class="col-lg-4 col-md-6">
+                    <div class="conv-card h-100">
+                        <div class="conv-top">
+                            <span class="conv-badge">
+                                {{ $convocatoria->tipo }}
+                            </span>
+                        </div>
+                        <div class="conv-body">
+                            <h4 class="conv-name">
+                                {{ $convocatoria->nombre }}
+                            </h4>
+                            <div class="conv-dates">
+                                <div class="date-box">
+                                    <span class="date-label">
+                                        Inicio
+                                    </span>
+                                    <span class="date-value">
+                                        {{ $convocatoria->inicio }}
+                                    </span>
+                                </div>
+
+                                <div class="date-box">
+                                    <span class="date-label">
+                                        Cierre
+                                    </span>
+                                    <span class="date-value">
+                                        {{ $convocatoria->cierre }}
+                                    </span>
+                                </div>
+                            </div>
+                                <a href="{{ $convocatoria->link }}" 
+                                    class="conv-btn"
+                                    target="_blank" 
+                                    rel="noopener noreferrer">
+                                        Ver convocatoria
+                                        <i class="bi bi-arrow-up-right"></i>
+                                </a>
+                            </div>
                     </div>
                 </div>
-                <div class="d-flex flex-column flex-md-row align-items-md-center gap-3 text-muted small">
-                    <div>
-                        <i class="bi bi-calendar-event me-1 text-warning"></i>
-                        {{ $aviso->inicio }}
+                @endforeach
+
+            </div>
+        </div>
+    </section>
+
+
+    {{-- AVISOS --}}
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="conv-card p-0 overflow-hidden">
+
+                <button 
+                    class="w-100 border-0 bg-transparent p-4 d-flex justify-content-between align-items-center aviso-toggle"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#avisosCollapse"
+                    aria-expanded="false"
+                >
+                    <div class="text-start">
+                        <h2 class="section-title mb-1">
+                            Avisos
+                        </h2>
                     </div>
-                    <div>
-                        <a href="#" class="btn-ver">Ver</a>
+                    <div class="aviso-arrow">
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+
+                </button>
+
+                {{-- CONTENIDO --}}
+                <div class="collapse" id="avisosCollapse">
+                    <div class="px-4 pb-4">
+                        <div class="d-flex flex-column gap-3">
+
+                            @foreach($avisos as $aviso)
+                            <div class="border rounded-4 p-3 bg-white">
+                                <div class="d-flex flex-column flex-lg-row justify-content-between gap-3">
+                                    <div class="flex-grow-1">
+                                        <small class="text-muted d-block mb-2">
+                                            {{ $aviso->inicio }}
+                                        </small>
+                                        <h6 class="fw-bold text-uady-blue mb-2">
+                                            {{ $aviso->nombre }}
+                                        </h6>
+                                        <p class="text-muted small mb-0">
+                                            {{ Str::limit($aviso->descripcion, 120) }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
-            @endforeach
         </div>
-    </div>
-
-    
-
-
-
-    
+    </section>
 
     
     
