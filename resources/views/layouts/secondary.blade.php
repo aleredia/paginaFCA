@@ -274,9 +274,242 @@
         .border-uady-gold-thin {
             border: 1px solid rgba(201, 151, 0, 0.3);
         }
+        /* ESTILOS PARA LA vinculacion */
+        .hero-spaces-container {
+            position: relative;
+            width: 100%;
+            background-color: #010c26; 
+        }
 
+        .hero-spaces-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.40; 
+            z-index: 1;
+        }
+
+        .hero-spaces-overlay {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: linear-gradient(180deg, rgba(1, 12, 38, 0.1) 0%, rgba(1, 12, 38, 0.5) 100%);
+        z-index: 2;
+        }
+
+        .hero-spaces-content, .hero-btn-container {
+        z-index: 3;
+        }
+
+        .hero-spaces-content {
+            z-index: 2;
+            max-width: 600px;
+        }
+
+        .hero-spaces-content .small-lead {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1rem;
+            line-height: 1.6;
+            text-align: justify;
+            text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.8); 
+        }
+
+        .hero-spaces-content .small-lead {
+        color: #ffffff;
+        font-size: 1.05rem;
+        line-height: 1.6;
+        text-align: justify;
+        text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.9);
+         }
+
+   
+        .hero-title {
+            color: #c99700 !important;
+        }
+
+        .hero-spaces-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        opacity: 0.45;
+        z-index: 1;
+        background-position: 0px center;
+    }
+
+    .animate-entrance {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUpFade 1s ease-out 0.2s forwards;
+    }
+ 
+    @keyframes slideUpFade {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    }
+
+    /*ESTILOS DEL MOSAICO DE IMAGENES EN VINCULACION*/
+
+    .space-card {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        border: 1px solid rgba(201, 151, 0, 0.1);
+    }
+
+    .space-card:hover {
+        transform: scale(1.01);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+    }
+
+    .space-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         
-    </style>
+        background: linear-gradient(180deg, rgba(1, 12, 38, 0) 40%, rgba(1, 12, 38, 0.85) 100%);
+        transition: all 0.4s ease-in-out;
+    }
+
+    .space-overlay h3 {
+        text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.8);
+        transform: translateY(0);
+        transition: transform 0.4s ease;
+    }
+
+    
+    .space-description {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transform: translateY(15px);
+    transition: opacity 0.4s ease, transform 0.4s ease, max-height 0.4s ease;
+    font-size: 0.88rem;
+    text-align: justify;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.9);
+}
+    
+    .space-card:hover .space-overlay {
+        background: linear-gradient(180deg, rgba(1, 12, 38, 0.4) 0%, rgba(1, 12, 38, 0.95) 100%);
+    }
+
+  .space-card:hover .space-description {
+    opacity: 1;
+    max-height: 250px; 
+    transform: translateY(0);
+    margin-top: 8px;
+}
+    .space-content-block {
+    width: 100%;
+}
+
+    /*DATATABLE*/
+    <style>
+
+    .dataTables_filter input {
+        border: 1px solid rgba(2, 26, 84, 0.2) !important;
+        border-radius: 30px !important;
+        padding: 6px 15px !important;
+        outline: none;
+        transition: 0.3s;
+    }
+
+    .dataTables_filter input:focus {
+        border-color: #c99700 !important;
+        box-shadow: 0 0 0 0.25rem rgba(201, 151, 0, 0.25) !important;
+    }
+
+    .page-item.active .page-link {
+        background-color: #021A54 !important;
+        border-color: #021A54 !important;
+        color: white !important;
+    }
+
+    .page-link {
+        color: #021A54 !important;
+    }
+    
+    .page-link:hover {
+        color: #c99700 !important;
+    }
+/*CARADS DE DOCENTES*/
+.docente-interactive-card {
+    height: 380px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid rgba(2, 26, 84, 0.1);
+}
+
+.docente-interactive-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15) !important;
+}
+
+.docente-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(1, 12, 38, 0) 50%, rgba(1, 12, 38, 0.85) 100%);
+    transition: all 0.4s ease-in-out;
+}
+
+.docente-card-overlay h6 {
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.8);
+    transition: transform 0.4s ease;
+}
+
+.docente-card-description {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(15px);
+    transition: opacity 0.4s ease, transform 0.4s ease, max-height 0.4s ease;
+}
+
+.docente-card-description p {
+    color: rgba(255, 255, 255, 0.95);
+    text-align: justify;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+.docente-interactive-card:hover .docente-card-overlay {
+    background: linear-gradient(180deg, rgba(1, 12, 38, 0.4) 0%, rgba(1, 12, 38, 0.95) 100%);
+}
+
+.docente-interactive-card:hover .docente-card-description {
+    opacity: 1;
+    max-height: 300px; 
+    transform: translateY(0);
+}
+
+
+ </style>
+
+
+
+
 </head>
 
 <body>
@@ -287,11 +520,11 @@
     {{-- ENCABEZADO DE PÁGINA--}}
     <div class="page-header py-3 mb-4">
         <div class="container">
-            <h2 class="fw-bold text-uady-blue mb-1">
+            <h2 class="text-center fw-bold text-uady-blue">
                 @yield('page-title')
             </h2>
             {{-- SUBTÍTULO --}}
-            <p class="text-muted small mb-0">
+            <p class="text-center small mb-0">
                 @yield('page-subtitle')
             </p>
 
