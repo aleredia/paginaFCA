@@ -128,16 +128,3 @@
             });
         });
     </script>
-
-    <style>
-        .bg-uady-gold-badge {
-        background-color: rgba(201, 151, 0, 0.15) !important;
-        color: #c99700 !important; 
-        font-weight: 600 !important;
-        padding: 6px 12px !important;
-        border-radius: 30px !important;
-        display: inline-block !important;
-        text-shadow: none !important; 
-    }
-    </style>
- 
