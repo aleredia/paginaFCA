@@ -1,18 +1,14 @@
 @extends('layouts.secondary')
 
 @section('title', 'Oferta Académica')
+@section('page-title', 'Oferta Académica')
+@section('page-subtitle', 'Explora nuestra oferta educativa de vanguardia')
 
 @section('banner')
     <x-banner imagen="img/bannerCarreras.jpg" texto="Bienvenido Egresados" />
 @endsection
 
 @section('content')
-    <div class="row mb-5 text-center">
-        <div class="col-12">
-            <h2 class="fw-bold text-uady-blue">Nuestras Licenciaturas</h2>
-            <p class="text-muted">Explora nuestra oferta educativa de vanguardia.</p>
-        </div>
-    </div>
 
     <div class="container-fluid px-lg-5 overflow-hidden">
         

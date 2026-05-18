@@ -1,19 +1,26 @@
-<div class="hero position-relative d-flex align-items-center">
-    {{-- IMAGEN --}}
+<div class="hero-modern overflow-hidden">
     <img 
         src="{{ asset($imagen ?? 'img/fondoo.jpg') }}"
-        class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
+        class="hero-bg"
         alt="Hero Image"
     >
-    {{--COLOR DE ENCIMA DE LA IMAGEN --}}
-    <div class="position-absolute top-0 start-0 w-100 h-100"></div>
+    
+    <div class="hero-overlay"></div>
 
-    {{-- CONTENIDO --}}
-    <div class="container position-relative z-1 text-white">
-        <div class="col-lg-7">
-            <h1 class="hero-title fw-bold mb-4">
-                {{ $slot }}
-            </h1>
+    <div class="container position-relative">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <h1 class="hero-heading">
+                    {{ $slot }}
+                </h1>
+                <p class="hero-description">
+                    Formación académica, innovación y excelencia universitaria para construir líderes preparados para el futuro.
+                </p>
+            </div>
         </div>
+
     </div>
+
+    <div class="hero-bottom-fade"></div>
+
 </div>

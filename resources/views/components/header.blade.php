@@ -5,7 +5,7 @@
 
             {{-- LOGO --}}
             <div class="d-flex align-items-center gap-3">
-                <img src="{{ asset('img/escudo.png') }}" class="logo">
+                <img src="{{ asset('img/logo.png') }}" class="logo">
 
                 <div class="brand-text">
                     <strong>FCA UADY</strong>
@@ -20,10 +20,13 @@
                 </a>
 
                 <div class="dropdown-custom">
-                    <a href="{{ route('aspirante') }}" class="nav-link">
+                    <a href="#" class="nav-link">
                         Aspirantes
                     </a>
                     <div class="dropdown-menu-custom">
+                        <a href="{{ route('aspirante') }}" class="dropdown-item-custom">
+                            Proceso de inscripción
+                        </a>
                         <a href="{{ route('oferta') }}" class="dropdown-item-custom">
                             Oferta Educativa
                         </a>
@@ -46,32 +49,18 @@
                         <a href="{{ route('egresados') }}" class="dropdown-item-custom">
                             Egresados
                         </a>
-                        <a href="{{ route('investigacion') }}" class="dropdown-item-custom">
-                            Investigación
-                        </a>
                         <a href="{{ route('vinculacion') }}" class="dropdown-item-custom">
                             Vinculación
                         </a>
-                        <a href="{{ route('internalizacion') }}" class="dropdown-item-custom">
-                            Internalización
-                        </a>
                     </div>
                 </div>
-
-
-
-
-
             </nav>
 
-            {{-- BARRA BUSQUEDA Y ENLACES --}}
+            {{-- ENLACES --}}
             <div class="d-flex align-items-center gap-3">
                 <div class="d-none d-lg-flex gap-2">
-                    <a href="#" class="quick-link">
+                    <a href="calendario" class="quick-link">
                         Calendario
-                    </a>
-                    <a href="#" class="quick-link">
-                        Servicios
                     </a>
                     <a href="#" class="quick-link">
                         Biblioteca
@@ -82,4 +71,3 @@
         </div>
     </div>
 </header>
-{{-- FIN HEADER --}}
