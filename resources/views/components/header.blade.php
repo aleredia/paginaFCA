@@ -39,7 +39,7 @@
                 </a>
 
                 <div class="dropdown-custom">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('nuestrafacultad') }}" class="nav-link">
                         Nuestra Facultad
                     </a>
                     <div class="dropdown-menu-custom">

@@ -665,6 +665,114 @@
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
+
+        @keyframes slideInTimelineText {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+       /*NUESTRA HISTORIA*/
+       
+        .timeline-card-item {
+            background-color: #ffffff;
+            border: 1px solid rgba(2, 26, 84, 0.08);
+            /* Transición suave para la elevación de la tarjeta y su sombra */
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                        box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .timeline-card-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(2, 26, 84, 0.12) !important;
+        }
+
+        .timeline-hero-trigger {
+            cursor: pointer;
+            min-height: 150px;
+            z-index: 1;
+        }
+        .timeline-slideshow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            overflow: hidden;
+        }
+        .timeline-slideshow .slide-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+
+            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .timeline-slideshow .slide-bg.active {
+            opacity: 1;
+        }
+
+        .timeline-card-item:hover .timeline-slideshow .slide-bg.active {
+            transform: scale(1.04);
+        }
+
+
+        .timeline-card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(2, 26, 84, 0.65) 0%, rgba(2, 26, 84, 0.35) 100%);
+            z-index: -1;
+            transition: opacity 0.4s ease;
+        }
+
+        .timeline-card-item:hover .timeline-card-overlay {
+            opacity: 0.8;
+        }
+
+        .timeline-text-content h3 {
+            text-shadow: 0px 2px 8px rgba(1, 12, 38, 0.8), 0px 1px 3px rgba(1, 12, 38, 0.5);
+        }
+
+        .text-white-75 {
+            color: rgba(255, 255, 255, 0.9) !important;
+            text-shadow: 0px 1px 5px rgba(1, 12, 38, 0.9);
+            font-weight: 500;
+        }
+
+        .bg-uady-gold {
+            background-color: #c99700 !important;
+            transition: transform 0.3s ease;
+        }
+        .timeline-card-item:hover .bg-uady-gold {
+            transform: scale(1.05);
+        }
+
+        .timeline-chevron-icon-white i {
+            transition: transform 0.3s ease, color 0.3s ease;
+            display: inline-block;
+        }
+
+        .timeline-hero-trigger[aria-expanded="true"] .timeline-chevron-icon-white i {
+            transform: rotate(180deg);
+            color: #c99700 !important;
+        }
+
+        .timeline-detailed-body {
+            background-color: #fafbfc !important;
+            border-color: rgba(2, 26, 84, 0.08) !important;
+            animation: slideInTimelineText 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
     </style>
 
 </head>

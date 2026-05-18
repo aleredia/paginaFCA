@@ -25,7 +25,7 @@ Route::get('/estudiante', function () {
 
 Route::get('/docente', function () {
     $apartados = \App\Models\Apartado::all();
-    $docentes = \App\Models\Docente::paginate(10); 
+   // $docentes = \App\Models\Docente::paginate(10); 
     return view('docente', compact('apartados', 'docentes')); 
 })->name('docente');
 
@@ -53,3 +53,8 @@ Route::get('/oferta', function () {
     $apartados = Apartado::all();
     return view('oferta', compact('apartados'));
 })->name('oferta');
+
+Route::get('/nuestrafacultad', function () {
+    $apartados = Apartado::all();
+    return view('nuestrafacultad', compact('apartados'));
+})->name('nuestrafacultad');

@@ -13,7 +13,8 @@
         </div>
         
         <h6 class="fw-bold text-uady-blue mb-1 text-uppercase">{{ $name }}</h6>
-        <span class="badge bg-uady-gold-badge mb-3">{{ $badge }}</span>
+        
+        <div class="badge bg-uady-gold-badge mb-3">{!! $badge !!}</div>
         
         <p class="small text-muted mb-0">
             {{ $slot }}
