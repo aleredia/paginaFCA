@@ -1,7 +1,4 @@
 @extends('layouts.secondary')
-@section('page-title', 'Egresados')
-@section('page-subtitle', 'Información para egresados de la Facultad de COntaduría y Administración')
-
 @section('title', 'Egresados')
 
 @section('content')
