@@ -49,14 +49,8 @@
                         <a href="{{ route('egresados') }}" class="dropdown-item-custom">
                             Egresados
                         </a>
-                        <a href="{{ route('investigacion') }}" class="dropdown-item-custom">
-                            Investigación
-                        </a>
                         <a href="{{ route('vinculacion') }}" class="dropdown-item-custom">
                             Vinculación
-                        </a>
-                        <a href="{{ route('internalizacion') }}" class="dropdown-item-custom">
-                            Internalización
                         </a>
                     </div>
                 </div>
@@ -65,11 +59,8 @@
             {{-- ENLACES --}}
             <div class="d-flex align-items-center gap-3">
                 <div class="d-none d-lg-flex gap-2">
-                    <a href="#" class="quick-link">
+                    <a href="calendario" class="quick-link">
                         Calendario
-                    </a>
-                    <a href="#" class="quick-link">
-                        Servicios
                     </a>
                     <a href="#" class="quick-link">
                         Biblioteca

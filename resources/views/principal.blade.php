@@ -105,11 +105,7 @@
     </section>
 
 
-
-    
-
-
-    {{-- AGENDA --}}
+    {{-- AVISOS Y AGENDA --}}
     <section class="agenda-section py-5">
 
         <div class="container">
@@ -120,8 +116,8 @@
                     </h2>
                 </div>
                 <div class="col-lg-5 text-lg-end mt-4 mt-lg-0">
-                    <a href="#" class="agenda-btn-top">
-                        Ver calendario completo
+                    <a href="{{ route('calendario') }}" class="agenda-btn-top">
+                        Calendario
                         <i class="bi bi-calendar-event ms-2"></i>
                     </a>
                 </div>
@@ -202,7 +198,7 @@
                     </h2>
                 </div>
                 <div class="col-lg-5 text-lg-end mt-4 mt-lg-0">
-                    <a href="#" class="btn-explorar">
+                    <a href="convocatorias" class="btn-explorar">
                         Explorar todas
                         <i class="bi bi-arrow-right ms-2"></i>
                     </a>
@@ -211,7 +207,7 @@
 
             <div class="row g-4">
 
-                @foreach($convocatorias as $convocatoria)
+                @foreach([$convocatoria1,$convocatoria2,$convocatoria3] as $convocatoria)
                 <div class="col-lg-4 col-md-6">
                     <div class="conv-card h-100">
                         <div class="conv-top">
@@ -257,60 +253,4 @@
             </div>
         </div>
     </section>
-
-
-    {{-- AVISOS --}}
-    <section class="py-5 bg-light">
-        <div class="container">
-            <div class="conv-card p-0 overflow-hidden">
-
-                <button 
-                    class="w-100 border-0 bg-transparent p-4 d-flex justify-content-between align-items-center aviso-toggle"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#avisosCollapse"
-                    aria-expanded="false"
-                >
-                    <div class="text-start">
-                        <h2 class="section-title mb-1">
-                            Avisos
-                        </h2>
-                    </div>
-                    <div class="aviso-arrow">
-                        <i class="bi bi-chevron-down"></i>
-                    </div>
-
-                </button>
-
-                {{-- CONTENIDO --}}
-                <div class="collapse" id="avisosCollapse">
-                    <div class="px-4 pb-4">
-                        <div class="d-flex flex-column gap-3">
-
-                            @foreach($avisos as $aviso)
-                            <div class="border rounded-4 p-3 bg-white">
-                                <div class="d-flex flex-column flex-lg-row justify-content-between gap-3">
-                                    <div class="flex-grow-1">
-                                        <small class="text-muted d-block mb-2">
-                                            {{ $aviso->inicio }}
-                                        </small>
-                                        <h6 class="fw-bold text-uady-blue mb-2">
-                                            {{ $aviso->nombre }}
-                                        </h6>
-                                        <p class="text-muted small mb-0">
-                                            {{ Str::limit($aviso->descripcion, 120) }}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    
-    
 @endsection
