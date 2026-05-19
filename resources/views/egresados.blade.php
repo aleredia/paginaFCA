@@ -1,6 +1,7 @@
 @extends('layouts.secondary')
 @section('title', 'Egresados')
-
+@section('page-title', 'Egresados')
+@section('page-subtitle', 'Consulta l ainformación relevante para los egresados.')
 @section('content')
 
 {{--cards de información --}}

@@ -1167,20 +1167,22 @@
 </head>
 
 <body>
-
         {{-- HEADER --}}
         <x-header :apartados="$apartados" />
 
-        {{-- ENCABEZADO DE PÁGINA--}}
-        <div class="page-header py-3 mb-4">
-            <div class="container">
-                <h2 class="text-center fw-bold text-uady-blue">
-                    @yield('page-title')
-                </h2>
-                {{-- SUBTÍTULO --}}
-                <p class="text-center small mb-0">
-                    @yield('page-subtitle')
-                </p>
+         {{-- ENCABEZADO DE PÁGINA--}}
+    <div class="page-header py-3 mb-4" 
+        style="background: #021A54;">
+        <div class="container">
+            <h2 class="fw-bold mb-1" style="color: #ffffff;">
+                @yield('page-title')
+            </h2>
+            {{-- SUBTÍTULO --}}
+            <p class="small mb-0" style="color: #e0e0e0;">
+                @yield('page-subtitle')
+            </p>
+        </div>
+    </div>s
 
             </div>
         {{-- BANNER OPCIONAL --}}

@@ -2,13 +2,13 @@
 
 @section('title', 'Espacios de la Facultad')
 @section('page-title', 'Vinculación')
-@section('page-subtitle', 'aqui debe ir algo y no se que poneeeeeeeeer')
+@section('page-subtitle', 'Coordinación encargada de gestionar convenios, alianzas estratégicas e inserción laboral en la comunidad.')
 @section('banner')
     <x-banner imagen="img/bannerCarreras.jpg" texto="Bienvenido Egresados" />
 @endsection
 
 @section('content')
-{{-- CAMBIAR ESTOOOOO--}}
+{{-- cards--}}
     <x-card-vinculacion 
         image="img/mkt.png"
         text="Diseñamos campañas y contenidos digitales basados en la investigación de la empresa, los consumidores, los competidores y las tendencias del mercado. Definimos el tipo de contenido, los canales y los tiempos ideales para posicionar la marca y generar clientes potenciales."
