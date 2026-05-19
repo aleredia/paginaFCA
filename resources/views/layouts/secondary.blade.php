@@ -1182,9 +1182,8 @@
                 @yield('page-subtitle')
             </p>
         </div>
-    </div>s
+    </div>
 
-            </div>
         {{-- BANNER OPCIONAL --}}
         @hasSection('banner')
             <div class="container">
@@ -1192,6 +1191,7 @@
             </div>
         @endif
 
+            </div>
 
         {{-- CONTENIDO --}}
         <main class="container py-5">
