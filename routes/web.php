@@ -31,10 +31,7 @@ Route::get('/docente', function () {
     return view('docente', compact('apartados', 'docentes')); 
 })->name('docente');
 
-Route::get('/egresados', function () {
-    $apartados = Apartado::all();
-    return view('egresados', compact('apartados'));
-})->name('egresados');
+Route::get('/egresados', [PrincipalController::class, 'egresados'])->name('egresados');
 
 Route::get('/vinculacion', function () {
     $apartados = Apartado::all();
@@ -42,11 +39,7 @@ Route::get('/vinculacion', function () {
 })->name('vinculacion');
 
 
-Route::get('/oferta', function () {
-    $apartados = Apartado::all();
-    return view('oferta', compact('apartados'));
-})->name('oferta');
-
+Route::get('/oferta', [PrincipalController::class, 'oferta'])->name('oferta');
 
 Route::get('/nuestrafacultad', function () {
     $apartados = Apartado::all();

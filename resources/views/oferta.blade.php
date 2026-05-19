@@ -9,37 +9,15 @@
 @endsection
 
 @section('content')
-
     <div class="container-fluid px-lg-5 overflow-hidden">
-        
-        <x-licenciatura-block 
-            image="img/conta.png" 
-            title="Licenciatura en Contador Público"
-            description="Forma profesionistas en contabilidad, auditoría y gestión financiera para la toma de decisiones y cumplimiento empresarial.
-"
-        />
-
-        <x-licenciatura-block 
-            image="img/merca.png" 
-            title="Licenciatura en Mercadotecnia y Negocios Internacionales"
-            description="Forma profesionales innovadores en mercadotecnia y estrategias digitales para fortalecer la competitividad empresarial.
-"
-            :reverse="true"
-        />
-
-        <x-licenciatura-block 
-            image="img/lati.png" 
-            title="Licenciatura en Administración de Tecnologías de Información"
-            description="Forma profesionales en tecnologías de la información capaces de desarrollar soluciones innovadoras y optimizar procesos organizacionales.
-"
-        />
-
-        <x-licenciatura-block 
-            image="img/admin.png" 
-            title="Licenciatura en Administración"
-            description="Forma profesionales en administración y mercadotecnia capaces de liderar organizaciones y fortalecer su competitividad."
-            :reverse="true"
-        />
+        @foreach($licenciaturas as $index => $carrera)
+            <x-licenciatura-block 
+                image="{{ $carrera->imagen }}" 
+                title="{{ $carrera->titulo }}"
+                description="{{ $carrera->descripcion }}"
+                :reverse="$index % 2 !== 0 ? true : false"
+            />
+        @endforeach
 
     </div>
 @endsection

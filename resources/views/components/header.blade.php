@@ -62,9 +62,9 @@
                     <a href="calendario" class="quick-link">
                         Calendario
                     </a>
-                    <a href="#" class="quick-link">
+                   {{-- <a href="#" class="quick-link">
                         Biblioteca
-                    </a>
+                    </a>--}}
                 </div>
             </div>
 

@@ -11,7 +11,6 @@
         <div class="col-md-4 col-12">
             <a href="#" class="text-decoration-none egresado-link-card h-100 d-flex align-items-center p-4 rounded-4 shadow-sm bg-white">
                 <div class="icon-box-uady me-3 d-flex align-items-center justify-content-center rounded-3">
-                    {{-- El icono ya no lleva color en línea, lo maneja el CSS --}}
                     <i class="bi bi-people-fill"></i>
                 </div>
                 <div>
@@ -117,42 +116,17 @@
         </div>
     </div>
 
-    <div class="row g-4 justify-content-center">
-        
-        <x-alumno-card 
-            image="img/e2.jpg" 
-            name="ALAN JAIR CHÍ MONTALVO" 
-            badge="Generación XLV"
-        >
-            Egresado de la Licenciatura en Mercadotecnia y Negocios Internacionales, con un destacable promedio de <strong>97.33</strong>.
-        </x-alumno-card>
-
-        <x-alumno-card 
-            image="img/e4.jpg" 
-            name="JOSÉ CARLOS PIÑA TORRES" 
-            badge="Generación XXXI"
-        >
-            Egresado de la Licenciatura en <strong>Administración de Tecnologías de la Información</strong>, con un destacable promedio de <strong>92.50</strong>.
-        </x-alumno-card>
-
-        <x-alumno-card 
-            image="img/e3.jpg" 
-            name="LISSIE BEATRIZ CALDERÓN ALCOCER" 
-            badge="Generación XCVIII"
-        >
-            Egresada de <strong>Contaduría Pública</strong> con un destacable promedio de <strong>97.77</strong>.
-        </x-alumno-card>
-
-        <x-alumno-card 
-            image="img/e5.jpg" 
-            name="SALMA DEL PILAR TEJERO GAMBOA" 
-            badge="Generación XII"
-        >
-            Egresada de la Licenciatura en Administración, con un destacable promedio de <strong>94.50</strong>.
-        </x-alumno-card>
-
-    </div>
-</div>
+        <div class="row g-4 justify-content-center">
+            @foreach($destacadosLic as $alumno)
+                <x-alumno-card 
+                    image="{{ $alumno->imagen }}" 
+                    name="{{ $alumno->nombre }}" 
+                    badge="{{ $alumno->badge_texto }}" 
+                >
+                    Egresado de la Licenciatura en <strong>{{ $alumno->programa }}</strong>, con un destacable promedio de <strong>{{ $alumno->promedio }}</strong>.
+                </x-alumno-card>
+            @endforeach
+        </div>
 
 
 {{--mejores promedios de maestría--}}
@@ -175,32 +149,16 @@
     </div>
 
     <div class="row g-4 justify-content-center">
-        
+    @foreach($destacadosMae as $alumno)
         <x-alumno-card 
-            image="img/e6.jpg" 
-            name="LIC. EN NEG. INTERN. Luis Pérez Gil Menéndez" 
-            badge="MAESTRÍA EN FINANZAS: Generación XXIII"
+            image="{{ $alumno->imagen }}" 
+            name="{{ $alumno->prefijo_profesional ? $alumno->prefijo_profesional . ' ' : '' }}{{ $alumno->nombre }}" 
+            badge="{{ $alumno->badge_texto }}"
         >
-            Egresado de la Maestría en Finanzas, con un destacable promedio de <strong>98.44</strong>.
+            Egresado de la <strong>{{ $alumno->programa }}</strong>, con un destacable promedio de <strong>{{ $alumno->promedio }}</strong>.
         </x-alumno-card>
-
-          <x-alumno-card 
-            image="img/e7.jpg" 
-            name="LIC.CIENCIAS POLIT. Y REL. INTERN. Guillermo Josue Chanona Magaña" 
-            badge="MAESTRÍA GESTIÓN DE LA MERCADOTECNIA: Generación XIII"
-        >
-            Egresado de la Maestría en Gestión de la Mercadotecnia, con un destacable promedio de <strong>97.58</strong>.
-        </x-alumno-card>
-
-          <x-alumno-card 
-            image="img/e8.jpg" 
-            name="Contadora Publica Ariadna Jaqueline Martínez Baas" 
-            badge="MAESTRÍA EN ADMINISTRACIÓN TRIBUTARIA: Generación XXII"
-        >
-            Egresada de la Maestría en Administración Tributaria, con un destacable promedio de <strong>97.73</strong>.
-        </x-alumno-card>
-
-    </div>
+    @endforeach
+</div>
 </div>
 
 @endsection

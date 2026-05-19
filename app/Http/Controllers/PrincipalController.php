@@ -8,6 +8,9 @@ use App\Models\Apartado;
 use App\Models\Curso;
 use App\Models\Convocatoria;
 use App\Models\Aviso; 
+use App\Models\Generacion;
+use App\Models\EgresadoDestacado;
+use App\Models\Licenciatura;
 
 class PrincipalController extends Controller
 {
@@ -65,6 +68,23 @@ class PrincipalController extends Controller
             'apartados',
             'avisos'
         ));
+    }
+
+    public function egresados()
+    {
+        $apartados = Apartado::all();
+        $generaciones = Generacion::all();
+        $destacadosLic = EgresadoDestacado::where('tipo', 'licenciatura')->get();
+        $destacadosMae = EgresadoDestacado::where('tipo', 'maestria')->get();
+        return view('egresados', compact('apartados', 'generaciones', 'destacadosLic', 'destacadosMae'));
+    }
+
+    public function oferta()
+    {
+        $apartados = Apartado::all();
+        $licenciaturas = Licenciatura::all();
+
+        return view('oferta', compact('apartados', 'licenciaturas'));
     }
     
 }
